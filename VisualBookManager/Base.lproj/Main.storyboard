@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VisualBookManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도서 관리 프로그램" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nj-sP-oUp">
+                                <rect key="frame" x="237" y="28" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VV4-4a-Uue">
+                                <rect key="frame" x="16" y="282" width="568" height="298"/>
+                                <color key="backgroundColor" red="0.55480003440000003" green="0.72439582650000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="khn-Id-6Yj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtj-d3-bdx">
+                                <rect key="frame" x="165" y="232" width="271" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.8185052132557783" blue="0.45018384117845689" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="m4V-xr-Qro"/>
+                                </constraints>
+                                <state key="normal" title="전체 목록 보기"/>
+                                <connections>
+                                    <action selector="showAllAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JQE-0Q-6Cm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Nj-sP-oUp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="58C-Yt-hSr"/>
+                            <constraint firstItem="VV4-4a-Uue" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="FB2-hR-x7I"/>
+                            <constraint firstItem="Vtj-d3-bdx" firstAttribute="centerX" secondItem="VV4-4a-Uue" secondAttribute="centerX" id="MYY-da-ZoB"/>
+                            <constraint firstItem="0Nj-sP-oUp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="buk-MQ-6m3"/>
+                            <constraint firstAttribute="bottom" secondItem="VV4-4a-Uue" secondAttribute="bottom" constant="20" symbolic="YES" id="phf-1x-7OI"/>
+                            <constraint firstItem="VV4-4a-Uue" firstAttribute="top" secondItem="Vtj-d3-bdx" secondAttribute="bottom" constant="20" id="rrj-XC-cSb"/>
+                            <constraint firstItem="Vtj-d3-bdx" firstAttribute="centerX" secondItem="0Nj-sP-oUp" secondAttribute="centerX" id="xRj-nM-vid"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputTextView" destination="VV4-4a-Uue" id="z2w-PR-vV3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="306" y="400"/>
         </scene>
     </scenes>
 </document>
