@@ -12,9 +12,16 @@ class ViewController: UIViewController {
     
     var myBook = BookManager()
     @IBOutlet var outputTextView:UITextView!
+    @IBOutlet var nameTextField:UITextField!
+    @IBOutlet var genreTextField:UITextField!
+    @IBOutlet var authorTextField:UITextField!
     
     @IBAction func showAllAction(sender:AnyObject){
         outputTextView.text! = myBook.showAllBook()
+    }
+    
+    @IBAction func addBookAction(sender:AnyObject){
+        
     }
 
     override func viewDidLoad() {

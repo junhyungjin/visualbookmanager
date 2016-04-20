@@ -303,6 +303,7 @@
 				D802169D1CC67BA600113292 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
