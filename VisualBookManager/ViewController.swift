@@ -12,16 +12,44 @@ class ViewController: UIViewController {
     
     var myBook = BookManager()
     @IBOutlet var outputTextView:UITextView!
+    
+    @IBOutlet var countLabel:UILabel?
+    
     @IBOutlet var nameTextField:UITextField!
     @IBOutlet var genreTextField:UITextField!
     @IBOutlet var authorTextField:UITextField!
     
     @IBAction func showAllAction(sender:AnyObject){
-        outputTextView.text! = myBook.showAllBook()
+        outputTextView.text = myBook.showAllBook()
     }
     
     @IBAction func addBookAction(sender:AnyObject){
+        let bookTemp = Book()
+        bookTemp.name = nameTextField.text!
+        bookTemp.genre = genreTextField.text!
+        bookTemp.author = authorTextField.text!
         
+        myBook.addBook(bookTemp)
+        outputTextView.text = "\(nameTextField.text!) 도서가 등록되었습니다."
+    }
+    
+    @IBAction func findBookAction(sender: AnyObject){
+        let resultBook = myBook.findBook(nameTextField.text!)
+        if resultBook != nil {
+            outputTextView.text = resultBook
+        }else {
+            outputTextView.text = "찾으시는 책이 없습니다"
+        }
+    }
+    
+    @IBAction func removeBookAction(sender: AnyObject){
+        let deleteBook = myBook.removeBook(nameTextField.text!)
+        
+        if deleteBook == true {
+            outputTextView.text = "\(nameTextField.text) 도서가 삭제 됐습니다"
+        } else {
+            outputTextView.text = "삭제 하려는 책이 없습니다"
+        }
     }
 
     override func viewDidLoad() {
