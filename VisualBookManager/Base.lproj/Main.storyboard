@@ -42,8 +42,7 @@
                                 <color key="tintColor" red="0.37278229354698278" green="0.098332473694320577" blue="0.50689102564102562" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="검색"/>
                                 <connections>
-                                    <action selector="addBookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bj9-Tl-O1T"/>
-                                    <action selector="findBookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="biM-wv-7Oi"/>
+                                    <action selector="findBookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQm-5o-tsk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도서 관리 프로그램" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nj-sP-oUp">
@@ -103,7 +102,6 @@
                                 <color key="tintColor" red="0.37278229349999997" green="0.098332473690000005" blue="0.50689102559999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="삭제"/>
                                 <connections>
-                                    <action selector="addBookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bem-kI-hiw"/>
                                     <action selector="removeBookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fu4-OX-Vgk"/>
                                 </connections>
                             </button>

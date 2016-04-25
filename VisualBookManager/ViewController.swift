@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         
         myBook.addBook(bookTemp)
         outputTextView.text = "\(nameTextField.text!) 도서가 등록되었습니다."
+        
+        countLabel!.text = "\(myBook.countBook())"
     }
     
     @IBAction func findBookAction(sender: AnyObject){
@@ -46,7 +48,8 @@ class ViewController: UIViewController {
         let deleteBook = myBook.removeBook(nameTextField.text!)
         
         if deleteBook == true {
-            outputTextView.text = "\(nameTextField.text) 도서가 삭제 됐습니다"
+            outputTextView.text = "\(nameTextField.text!) 도서가 삭제 됐습니다"
+            countLabel!.text = "\(myBook.countBook())"
         } else {
             outputTextView.text = "삭제 하려는 책이 없습니다"
         }
@@ -73,6 +76,9 @@ class ViewController: UIViewController {
         myBook.addBook(book1)
         myBook.addBook(book2)
         myBook.addBook(book3)
+        
+        countLabel!.text = "\(myBook.countBook())"
+        
     }
 
     override func didReceiveMemoryWarning() {
